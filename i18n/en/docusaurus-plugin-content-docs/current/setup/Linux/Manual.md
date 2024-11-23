@@ -1,11 +1,10 @@
 ---
 sidebar_position: 2
 ---
+# Manual Install
 
-
-# Maunal Install
 :::tip
-[Docker](../Docker.md) is more recmmended.
+[Docker](../Docker.md) is more recommended.
 :::
 
 ## Install OpenJDK
@@ -32,16 +31,19 @@ OpenJDK 64-Bit Server VM (build xxxxxxx, mixed mode, sharing)
 ```
 
 ## Download Jar
+
 Download the `jar` and `libraries.tar.gz` from [Release](https://github.com/PBH-BTN/PeerBanHelper/releases/latest).
 
 Unzip them into a same directory.
 
 Using following command to launch PBH：
+
 ```shell
-java -jar -Xmx512M -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+ShrinkHeapInSteps -jar <jar file>
+java -Xmx512M -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+ShrinkHeapInSteps -jar <jar file>
 ```
+
 PBH will automatically detect the desktop environment and enable the GUI if supported, but the GUI may fail to initialize on some devices. In such cases, manually disable the GUI:
 
 ```shell
-java -jar -Xmx512M -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+ShrinkHeapInSteps -jar <jar file> nogui
+java -Xmx512M -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+ShrinkHeapInSteps -jar <jar file> nogui
 ```
