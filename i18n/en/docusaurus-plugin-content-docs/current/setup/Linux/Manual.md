@@ -36,7 +36,7 @@ Download the `jar` and `libraries.tar.gz` from [Release](https://github.com/PBH-
 
 Unzip them into a same directory.
 
-Using following command to launch PBH：
+Using the following command to launch PBH：
 
 ```shell
 java -Xmx512M -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+ShrinkHeapInSteps -jar <jar file>
