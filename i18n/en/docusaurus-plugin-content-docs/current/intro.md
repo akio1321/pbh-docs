@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 ---
-
 # Welcome
 
 Welcome to the documentation of PeerBanHelper. This document will provide you with detailed steps and common issues for PeerBanHelper from installation to configuration.
@@ -10,17 +9,16 @@ Welcome to the documentation of PeerBanHelper. This document will provide you wi
 
 Please select your operating system or deployment method to view the installation tutorial:
 
-| Platform                   | Link                               |
-| ----------------------------- | ---------------------------------- |
-| Windows Installer                | [View](./setup/Windows/Installer.md)         |
-| Windows Portable                | [View](./setup/Windows/Portable.md) |
-| Docker                        | [View](./setup/Docker.md)          |
-| Synology DSM(Package)            | [View](./setup/Synology%20DSM/Imnks.md)           |
-| Synology DSM(Container Manager) | [View](./setup/Synology%20DSM/docker.md)        |
-| Linux Installer                  | [View](./setup/Linux/LinuxInstall4j.md)  |
-| Linux maunal Install             | [View](./setup/Linux/Manual.md)           |
-| Package Manager (Deb)                | [View](./setup/Linux/Deb.md)  |
-
+| Platform                        | Link                                  |
+| ------------------------------- | ------------------------------------- |
+| Windows Installer               | [View](./setup/Windows/Installer.md)     |
+| Windows Portable                | [View](./setup/Windows/Portable.md)      |
+| Docker                          | [View](./setup/Docker.md)                |
+| Synology DSM(Package)           | [View](./setup/Synology%20DSM/Imnks.md)  |
+| Synology DSM(Container Manager) | [View](./setup/Synology%20DSM/docker.md) |
+| Linux Installer                 | [View](./setup/Linux/LinuxInstall4j.md)  |
+| Linux Manual Install           | [View](./setup/Linux/Manual.md)          |
+| Package Manager (Deb)           | [View](./setup/Linux/Deb.md)             |
 
 ## Need Support?
 

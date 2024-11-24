@@ -1,9 +1,10 @@
 ---
 sidebar_position: 2
 ---
+# Manual Install
 
-# Maunal Install
 ## Install Java
+
 Install JDK by homebrew:
 
 ```shell
@@ -24,17 +25,21 @@ Java(TM) SE Runtime Environment (build 23.0.1+11-39)
 Java HotSpot(TM) 64-Bit Server VM (build 23.0.1+11-39, mixed mode, sharing)
 ```
 
-## 运行
+## Running
+
 Download the `jar` and `libraries.tar.gz` from [Release](https://github.com/PBH-BTN/PeerBanHelper/releases/latest)
 Unzip them into a same directory.
 
 Run:
+
 ```shell
 java -Djava.awt.headless=true -Xmx512M -Xss512k -XX:+UseG1GC -XX:+UseStringDeduplication -XX:+ShrinkHeapInSteps -jar PeerBanHelper.jar nogui
 ```
 
 ## Services
+
 touch file `~/Library/LaunchAgents/peerbanhelper.plist` with content:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">

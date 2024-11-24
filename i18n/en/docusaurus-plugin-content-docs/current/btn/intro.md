@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 ---
-
 # What is BTN
 
 Before we start to understand what BTN is, we first need to understand various anti-leeching methods in history.
@@ -71,4 +70,4 @@ It sounds like a lot of data needs to be uploaded to the server. The answer is: 
 
 To perform these analysis operations, BTN must collect and upload a large amount of necessary data, all types of uploaded data can be found in the [BTN protocol specification](https://github.com/PBH-BTN/BTN-Spec).
 
-It is particularly worth mentioning that: when uploading, we will not upload the info_hash and name of the torrent. Instead, we use the irreversible hashed torrent
+It is particularly worth mentioning that: when uploading, we will not upload the info_hash and name of the torrent. Instead, we use the irreversible hashed torrent.
