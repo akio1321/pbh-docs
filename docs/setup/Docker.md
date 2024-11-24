@@ -42,9 +42,9 @@ services:
 选择一个合适的位置，创建一个目录用于存放 PBH 的数据，并将工作目录切换至此位置。然后，执行以下命令：
 
 ```shell
-sudo docker run -d --name peerbanhelper --stop-signal SIGKILL -p 9898:9898 -v $(pwd)/:/app/data/ 你的镜像标签
+sudo docker run -d --name peerbanhelper --stop-timeout -p 9898:9898 -v ${PWD}/:/app/data/ 你的镜像标签
 ```
-
-**注意**：在 `-v` 参数中，`$(pwd)/` 表示当前工作目录，应替换为你希望用作数据目录的路径。同时，将 `你的镜像标签` 替换为你刚刚获取的 Docker 镜像标签。
-
-Web 界面将在 9898 端口开放。
+:::warning
+在 `-v` 参数中，`$(pwd)/` 表示当前工作目录，应替换为你希望用作数据目录的路径。同时，将 `你的镜像标签` 替换为你刚刚获取的 Docker 镜像标签。
+:::
+如果一切正常，WebUI 的端口将在 9898 端口开放。
