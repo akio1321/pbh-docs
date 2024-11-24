@@ -1,15 +1,14 @@
-# Windows
+# Windows 系统设置
 
-## EcoQoS 节流 （Windows 11 22H2+）
+## EcoQoS 节能优化（适用于 Windows 11 22H2 及更高版本）
 
-在 Windows 22H2 或更高版本的 Windows 11 中，如果系统 BIOS 和 CPU 支持，则 PeerBanHelper 会启用 [EcoQoS](https://devblogs.microsoft.com/performance-diagnostics/introducing-ecoqos/) 省电优化。  
-缓解 PBH 在每次检测时突发计算量引发的 CPU 睿频造成的瞬时电量消耗，并降低自身优先级，将更多系统资源让给其他程序。  
+在 Windows 11 的 22H2 版本或更高版本中，如果系统 BIOS 和 CPU 均支持，PeerBanHelper（PBH）将自动启用 [EcoQoS](https://devblogs.microsoft.com/performance-diagnostics/introducing-ecoqos/) 节能功能。此功能旨在缓解 PBH 在执行检测任务时因瞬时计算量增加导致的 CPU 睿频及电量消耗，同时降低 PBH 的运行优先级，以便将更多系统资源分配给其他应用程序。
 
-当 EcoQoS 成功启用时，PBH 的 GUI 窗口上会显示一个叶子图标：
+当 EcoQoS 成功启用时，PBH 的图形用户界面（GUI）窗口将显示一个叶子图标，以作为启用状态的视觉提示：
 
-![EcoQoS](./assets/ecoqos.png)
+![EcoQoS 图标](./assets/ecoqos.png)
 
-要关闭系统功能，请编辑 `config.yml` 中的：
+若您希望关闭此功能，请编辑 `config.yml` 文件中的以下配置项：
 
 ```yaml
 performance:
@@ -18,3 +17,5 @@ performance:
   # https://devblogs.microsoft.com/performance-diagnostics/introducing-ecoqos/
   windows-ecoqos-api: true
 ```
+
+将 `windows_ecoqos_api` 的值从 `true` 更改为 `false`，即可关闭 EcoQoS 节能优化功能。

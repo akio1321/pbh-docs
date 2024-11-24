@@ -2,9 +2,9 @@
 
 PeerBanHelper 的重要模块之一，默认订阅来自 [PBH-BTN/BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) 的规则。  
 当有规则内的 IP 连接下载器时，PeerBanHelper 会立刻封禁它。
-
+:::tip
 不建议通过配置文件配置此功能，您可以直接使用 WebUI 的可视化编辑。
-
+:::
 ## 制作规则
 
 PeerBanHelper 可以加载由以下内容组成的 IP 规则集：
