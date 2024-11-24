@@ -25,7 +25,7 @@ Java(TM) SE Runtime Environment (build 23.0.1+11-39)
 Java HotSpot(TM) 64-Bit Server VM (build 23.0.1+11-39, mixed mode, sharing)
 ```
 
-## 运行
+## Running
 
 Download the `jar` and `libraries.tar.gz` from [Release](https://github.com/PBH-BTN/PeerBanHelper/releases/latest)
 Unzip them into a same directory.
