@@ -20,6 +20,13 @@ PeerBanHelper 利用 qBittorrent 的 WebAPI 与 qBittorrent 进行交互。本�
 4. 在“身份验证”部分，设置一个用户名和高强度密码。若密码被他人猜中，他们可能会访问 qBittorrent 下载文件或执行命令/程序。
 5. 最后，点击右下角的“应用”按钮，以保存设置。
 
+:::warning
+**安全提示**
+- 请设置强密码以保护您的 qBittorrent
+- 如果只在本地使用，建议将访问限制为 127.0.0.1
+- 确保防火墙配置正确，只开放必要端口
+:::
+
 ![step2](assets/qBittorrent-step2.png)
 
 ## 配置高级选项

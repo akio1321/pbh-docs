@@ -18,4 +18,4 @@ performance:
   windows-ecoqos-api: true
 ```
 
-将 `windows_ecoqos_api` 的值从 `true` 更改为 `false`，即可关闭 EcoQoS 节能优化功能。
+将 `windows-ecoqos-api` 的值从 `true` 更改为 `false`，即可关闭 EcoQoS 节能优化功能。
