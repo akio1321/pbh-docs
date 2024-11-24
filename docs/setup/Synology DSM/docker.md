@@ -18,7 +18,7 @@ sidebar_position: 6
 
 ![步骤3](./assets/dsm-3.png)
 
-![步骤4](./assets/dsm-4.png）
+![步骤4](./assets/dsm-4.png)
 
 ## 获取镜像标签
 
