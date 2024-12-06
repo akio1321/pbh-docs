@@ -28,5 +28,6 @@ Check out the [FAQ](./faq.md), and if it doesn't help you, feel free to [join th
 
 PeerBanHelper is an open-source software, and you are free to distribute and download PeerBanHelper.
 
-However, a few features of PeerBanHelper might require you to enter a license key. You can obtain it by supporting us on [Afdian](https://afdian.com/a/Ghost_chu), or by borrowing a friend's license key (don't worry, you are absolutely allowed to do this 😎).
-All license revenue will be used to maintain the infrastructure of PBH-BTN and to reward our hardworking community maintainers.
+If PeerBanHelper has been helpful to you, consider supporting us with a donation on [Afdian](https://afdian.com/a/Ghost_chu).
+All donation income will be used to maintain the PBH-BTN infrastructure and reward our hardworking community maintainers.
+
