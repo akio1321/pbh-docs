@@ -30,5 +30,5 @@ sidebar_position: 1
 
 PeerBanHelper 是一个开源软件，您可以自由的传播和免费下载 PeerBanHelper。  
 
-不过，PeerBanHelper 的少数几个功能可能需要您输入许可证。您可以在[爱发电](https://afdian.com/a/Ghost_chu)发电获取，或者找一位朋友借用 Ta 的许可证（别担心，你完全可以这么干😎）。  
-所有的许可证收入都将用于维护 PBH-BTN 的基础设施以及奖励我们辛勤的社区维护者们。
+如果 PeerBanHelper 对你有所帮助，考虑在[爱发电](https://afdian.com/a/Ghost_chu)捐赠支持我们。  
+所有的捐赠收入都将用于维护 PBH-BTN 的基础设施以及奖励我们辛勤的社区维护者们。

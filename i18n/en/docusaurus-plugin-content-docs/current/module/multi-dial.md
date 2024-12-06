@@ -1,47 +1,36 @@
-# 多拨封禁
+# Multi-Dialing Blocker
 
-一些吸血者会通过多拨或者运营商内鬼的形式获得大量相同子网的 IP 地址。  
-ARB 尽管与此模块拥有几乎完全相同的功能，但只有在出现任意封禁时才会动作。多拨封禁则无需等待封禁，将会主动检测已连接的 Peers。
+Some leechers acquire a large number of IP addresses from the same subnet by using multi-dialing or by exploiting insider connections within ISPs.  
+Although ARB has nearly the same functionality as this module, it only activates when a ban occurs. The multi-dialing blocker, on the other hand, does not require a ban to trigger; it actively detects connected peers.
 
-当同一个子网范围超过指定数量的 IP 同时连接到相同种子时，就会开始子网封禁操作。
+When the number of IP addresses from the same subnet exceeds the specified limit while connecting to the same torrent, subnet banning will be initiated.
 
-## 配置文件
+## Configuration File
 
 ```yaml
-  # 多拨封禁
+  # Multi-dialing Blocker
   # Multi-dialing blocker
   multi-dialing-blocker:
     enabled: true
-    # 封禁时间，单位：毫秒，使用 default 则跟随全局设置
+    # Ban duration in milliseconds, use default to follow global settings
     ban-duration: 1296000000
-    # IPV4 前缀长度
     # IPV4 prefix length
-    # IP地址前多少位相同的视为同一个子网，位数越少范围越大，一般不需要修改
-    # The same prefix ip addresses will trick as in same subnet, usually don't need changes
+    # The number of common bits in the IP address to consider as the same subnet. The fewer bits, the larger the range. Usually, no need to modify.
     subnet-mask-length: 24
-    # IPv6 地址前缀长度
     # IPv6 prefix length
     subnet-mask-v6-length: 60
-    # 容许同一网段下载同一种子的IP数量，正整数
-    # 防止DHCP重新分配IP、碰巧有同一小区的用户下载同一种子等导致的误判
-    # The allowed maximum amount of ips in same subnet
-    # To avoid mistake bans that caused by DHCP re-allocated IPs, or multiple users in same city
+    # Maximum number of IPs allowed to download the same torrent from the same subnet, positive integer
+    # To avoid false positives caused by DHCP reassigning IPs or multiple users in the same area downloading the same torrent
     tolerate-num: 5
-    # 缓存持续时间（秒）
-    # Cache life span
-    # 所有连接过的peer会记入缓存，DHCP服务会定期重新分配IP，缓存时间过长会导致误杀
-    # All connected peers will record into cache, DHCP may re-allocated IPs.
+    # Cache lifespan in seconds
+    # All connected peers will be recorded in the cache. DHCP reassigns IPs periodically, and if the cache time is too long, false bans may occur.
     cache-lifespan: 86400
-    # 是否追猎
     # Keep hunting
-    # 如果某IP已判定为多拨，无视缓存时间限制继续搜寻其同伙
-    # If a specific IP flagged multi-dialing, should we ignore the caching span and keep searching other IPs in same subnet?
+    # If an IP is flagged as multi-dialing, should the system ignore the cache lifespan and continue hunting for other IPs in the same subnet?
     keep-hunting: true
-    # 追猎持续时间（秒）
-    # Hunting time
-    # keep-hunting为true时有效，和cache-lifespan相似，对被猎杀IP的缓存持续时间
-    # Only works when keep-hunting enabled, similar as cache-lifespan
+    # Hunting duration in seconds
+    # Effective only when keep-hunting is enabled, similar to cache-lifespan, this controls the duration of cached data for hunted IPs.
     keep-hunting-time: 2592000
-  # 规则引擎，支持 AviatorScript 语言 - User script, support AviatorScript
-  # 提供在 PBH 上自行编程编写规则的能力 - Provide programming ability on PBH
+  # Rule engine, supports AviatorScript language - User script, support AviatorScript
+  # Provides programming ability to write custom rules on PBH - Provide programming ability on PBH
 ```
