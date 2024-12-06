@@ -2,46 +2,42 @@
 sidebar_position: 5
 ---
 
-# 套件方式
+# Package Method
 
-## 添加矿神 SPK7 源
+## Add Miner SPK7 Source
 
-PeerBanHelper 与 [imnks.com](https://imnks.com/) 合作，将 PeerBanHelper 以容器套件的方式带到群晖的套件中心，并提供安装和更新服务。
+PeerBanHelper has partnered with [imnks.com](https://imnks.com/) to bring PeerBanHelper to Synology's Package Center as a container package, offering installation and update services.
 
-首先，请跟随[矿神SPK源官方教程](https://imnks.com/1780.html)，为您的 DSM 设备启用矿神社区源。
+First, please follow the [official Miner SPK source tutorial](https://imnks.com/1780.html) to enable the Miner community source on your DSM device.
 
-## 在套件中心安装 PBH
+## Install PBH in Package Center
 
-在添加矿神社区源后，您可以前往社群选项卡并在搜索框中搜索 “PeerBanHelper”。
+After adding the Miner community source, you can go to the Community tab and search for "PeerBanHelper" in the search box.
 
 ![imnks1](./assets/imnks1.jpg)
 
-找到 PeerBanHelper 后，点击“安装套件”安装。
+Once you find PeerBanHelper, click "Install Package" to install it.
 
 ![imnks2](./assets/imnks2.jpg)
 
-跟随安装向导完成后续配置流程。
+Follow the installation wizard to complete the subsequent configuration process.
 
-## 修改 PeerBanHelper 配置
+## Modify PeerBanHelper Configuration
 
-安装完成后，PeerBanHelper 将会自动创建一个名为 `peerbanhelper` 的共享文件夹，你可以在里面管理所有 PBH 的相关文件。您还可以为其切换存储空间，但对共享文件夹本身执行任何除切换存储空间以外的操作可能导致工作异常。
+After installation, PeerBanHelper will automatically create a shared folder named `peerbanhelper`, where you can manage all PBH-related files. You can also switch storage locations, but performing any operations other than switching the storage location on the shared folder itself may cause malfunctions.
 
 ![imnks3](./assets/imnks3.jpg)
 
-如需进入 WebUI 界面，可在主菜单中找到 PBH 的程序图标，点击即可打开 WebUI。
+To access the WebUI, you can find the PBH program icon in the main menu and click it to open the WebUI.
 
 ![imnks4](./assets/imnks4.jpg)
 
-如需管理容器，可在 Container Manager 中找到 PBH 的项目。
+To manage the container, you can find the PBH project in the Container Manager.
 
 ![imnks5](./assets/imnks5.jpg)
 
-## 配置下载器
+## Configure Downloader
 
-尽管安装的是套件，但本质上（目前）仍然是个 Docker 容器。因此也得按照 Docker 的步骤来配置网络。访问也在同一个 NAS 上的下载器时，需要使用网关地址而非 `127.0.0.1` 或者 `localhost`。网关地址可在 Container Manager -> 网络 -> peerbanhelper_default 中找到。
+Although you are installing the package, it is essentially (for now) still a Docker container. Therefore, you need to configure the network according to Docker steps. When accessing the downloader on the same NAS, use the gateway address instead of `127.0.0.1` or `localhost`. The gateway address can be found in Container Manager -> Network -> peerbanhelper_default.
 
 ![imnks6](./assets/imnks6.jpg)
-
-
-
-
