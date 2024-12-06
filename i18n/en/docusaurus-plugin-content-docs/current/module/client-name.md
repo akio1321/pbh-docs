@@ -1,16 +1,16 @@
-# ClientName 过滤器
+# ClientName Filter
 
-ClientName 过滤器会使用由 Peer 主动汇报的 ClientName（有时也称为 “客户端名称” 或者 “UserAgent”）来检测。对于内置 PeerID 过滤器的客户端（例如 qBittorrent Enhanced Edition），建议优先使用其内置的 ClientName 过滤功能。  
-注意 ClientName 是由 Peer 主动汇报的（可以被随意修改），因此不能作为判定对方客户端的依据。  
+The ClientName filter uses the ClientName actively reported by the Peer (sometimes called "client name" or "UserAgent") for detection. It is recommended to prioritize using the built-in ClientName filtering functionality of clients with an embedded PeerID filter (e.g., qBittorrent Enhanced Edition).  
+Note that the ClientName is actively reported by the Peer (and can be arbitrarily modified), so it should not be used as the sole basis for determining the client type.
 
-ClientName 是 BitTorrent 的一个[扩展协议](https://www.bittorrent.org/beps/bep_0010.html)，因此一个 Peer 可以没有 ClientName。对于这种情况，PeerBanHelper 会显示为 `N/A`。
+ClientName is an [extended protocol](https://www.bittorrent.org/beps/bep_0010.html) of BitTorrent, so a Peer may not have a ClientName. In such cases, PeerBanHelper will display it as `N/A`.
 
-## 配置文件
+## Configuration File
 
-规则使用[JSON规则引擎](../misc/json-engine.md)语法。
+The rules use the [JSON Rules Engine](../misc/json-engine.md) syntax.
 
 ```yaml
-  # 客户端名称封禁
+  # ClientName blacklist
   # ClientName blacklist
   client-name-blacklist:
     enabled: true
@@ -30,7 +30,7 @@ ClientName 是 BitTorrent 的一个[扩展协议](https://www.bittorrent.org/bep
       - '{"method":"CONTAINS","content":"gopeed dev"}'
       - '{"method":"STARTS_WITH","content":"xfplay"}'
       - '{"method":"CONTAINS","content":"StellarPlayer"}'
-      - '{"method":"CONTAINS","content":"SP "}' # 不要删除尾随空格
+      - '{"method":"CONTAINS","content":"SP "}' # Do not delete trailing space
       - '{"method":"CONTAINS","content":"flashget"}'
       - '{"method":"CONTAINS","content":"tudou"}'
       - '{"method":"CONTAINS","content":"torrentstorm"}'
@@ -42,4 +42,3 @@ ClientName 是 BitTorrent 的一个[扩展协议](https://www.bittorrent.org/bep
       - '{"method":"STARTS_WITH","content":"ljyun.cn/hangzhou/monitoring"}'
       - '{"method":"STARTS_WITH","content":"taipei-torrent"}'
       - '{"method":"STARTS_WITH","content":"-XL"}'
-```
