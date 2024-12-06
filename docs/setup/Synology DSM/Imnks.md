@@ -2,46 +2,46 @@
 sidebar_position: 5
 ---
 
-# 套件方式
+# 使用套件部署
 
-## 添加矿神 SPK7 源
+## 添加矿神 SPK7 源至套件中心
 
-PeerBanHelper 与 [imnks.com](https://imnks.com/) 合作，将 PeerBanHelper 以容器套件的方式带到群晖的套件中心，并提供安装和更新服务。
+PeerBanHelper 与 [imnks.com](https://imnks.com/) 携手合作，将 PeerBanHelper 以容器套件的形式引入群晖（Synology）的套件中心，提供便捷的安装与更新服务。
 
-首先，请跟随[矿神SPK源官方教程](https://imnks.com/1780.html)，为您的 DSM 设备启用矿神社区源。
+请遵循[矿神SPK源官方教程](https://imnks.com/1780.html)的指引，为您的 DSM（DiskStation Manager）设备启用矿神社区源。
 
-## 在套件中心安装 PBH
+## 在套件中心安装 PeerBanHelper
 
-在添加矿神社区源后，您可以前往社群选项卡并在搜索框中搜索 “PeerBanHelper”。
+成功添加矿神社区源后，请前往套件中心的“社群”选项卡，并在搜索框中输入“PeerBanHelper”。
 
 ![imnks1](./assets/imnks1.jpg)
 
-找到 PeerBanHelper 后，点击“安装套件”安装。
+找到 PeerBanHelper 套件后，点击“安装”按钮进行安装。
 
 ![imnks2](./assets/imnks2.jpg)
 
-跟随安装向导完成后续配置流程。
+根据安装向导的提示，完成后续的配置流程。
 
-## 修改 PeerBanHelper 配置
+## 配置 PeerBanHelper
 
-安装完成后，PeerBanHelper 将会自动创建一个名为 `peerbanhelper` 的共享文件夹，你可以在里面管理所有 PBH 的相关文件。您还可以为其切换存储空间，但对共享文件夹本身执行任何除切换存储空间以外的操作可能导致工作异常。
+安装完成后，PeerBanHelper 将自动创建一个名为“peerbanhelper”的共享文件夹，用于存储所有相关的文件和配置。请注意，虽然可以切换该共享文件夹的存储空间，但对其执行除切换存储空间外的其他操作可能会导致工作异常。
 
 ![imnks3](./assets/imnks3.jpg)
 
-如需进入 WebUI 界面，可在主菜单中找到 PBH 的程序图标，点击即可打开 WebUI。
+要访问 PeerBanHelper 的 Web 用户界面（WebUI），请在主菜单中找到 PeerBanHelper 的程序图标，并点击以打开 WebUI。
 
 ![imnks4](./assets/imnks4.jpg)
 
-如需管理容器，可在 Container Manager 中找到 PBH 的项目。
+若需管理容器，请在 Container Manager（容器管理器）中找到 PeerBanHelper 的相关项目。
 
 ![imnks5](./assets/imnks5.jpg)
 
-## 配置下载器
+## 配置下载器连接
 
-尽管安装的是套件，但本质上（目前）仍然是个 Docker 容器。因此也得按照 Docker 的步骤来配置网络。访问也在同一个 NAS 上的下载器时，需要使用网关地址而非 `127.0.0.1` 或者 `localhost`。网关地址可在 Container Manager -> 网络 -> peerbanhelper_default 中找到。
+尽管 PeerBanHelper 是以套件形式安装的，但其本质上仍是一个 Docker 容器。因此，在配置网络时，需遵循 Docker 的相关步骤。当访问位于同一 NAS 上的下载器时，应使用网关地址，而非 `127.0.0.1` 或 `localhost`。网关地址可在 Container Manager（容器管理器）的“网络”选项卡下的“peerbanhelper_default”网络配置中找到。
 
 ![imnks6](./assets/imnks6.jpg)
 
-
+请确保正确配置网络地址，以确保 PeerBanHelper 能够顺利与下载器进行通信。
 
 
