@@ -5,6 +5,14 @@ PeerBanHelper 的重要模块之一，默认订阅来自 [PBH-BTN/BTN-Collected-
 
 不建议通过配置文件配置此功能，您可以直接使用 WebUI 的可视化编辑。
 
+![rules-sub](./assets/sub-rules.png)
+
+默认情况下，规则订阅模块会在每次 PeerBanHepler 启动时，或者每隔 4 个小时更新一次所有的订阅规则。您可以点击齿轮小标记更改订阅规则的更新频率。
+
+如果需要查看规则的变动情况或者更新是否成功，可点击“查看历史记录”按钮，查看历史更新记录。
+
+![rules-sub-logs](./assets/sub-rules-logs.png)
+
 ## 制作规则
 
 PeerBanHelper 可以加载由以下内容组成的 IP 规则集：

@@ -7,7 +7,9 @@ ClientName 是 BitTorrent 的一个[扩展协议](https://www.bittorrent.org/bep
 
 ## 配置文件
 
-规则使用[JSON规则引擎](../misc/json-engine.md)语法。
+规则使用[JSON规则引擎](../misc/json-engine.md)语法。你可以通过编写 JSON 规则来控制封禁行为。但如果只是简单的封禁和例外排除，则可以通过 WebUI 完成。
+
+![Client Name](./assets/client-name.png)
 
 ```yaml
   # 客户端名称封禁

@@ -13,6 +13,10 @@ server:
   http: 9898
 ```
 
+或者通过 WebUI 直接修改：
+
+![webui-settings](./assets/webui-settings.png)
+
 ## 关闭公网监听，仅开放本地的 WebUI 和下载器封禁列表提供端点访问
 
 ```yaml
@@ -24,6 +28,12 @@ server:
   # WebUI listen address, if you need access from non-localhost location, change it to 0.0.0.0. Locally deploy use 127.0.0.1 is recommended.
   address: "0.0.0.0"
 ```
+
+或者通过 WebUI 直接修改 “地址” 配置项。
+
+`0.0.0.0`：监听所有网卡的端口  
+`127.0.0.1`：监听本地回环端口（仅本机可以访问）  
+`网卡 IP 地址`：只有对应网卡的流量可以访问
 
 ## 使用外部 WebUI
 
@@ -55,6 +65,8 @@ server:
   allow-cors: false
 ```
 
+或者在 WebUI 中直接切换 “允许 CORS” 开关。
+
 ## 更改 WebUI Token
 
 如果不幸忘记了 WebUI 的 Token 是什么，又或者您想修改下 Token，则可以在配置文件中修改：
@@ -69,6 +81,8 @@ server:
   # To access the WebUI endpoint, token is required. If there is empty string, OOBE will start to guide you set it.
   token: ""
 ```
+
+或者在 WebUI 中直接修改，修改后需要重新登录。
 
 ## 开发自己的 WebUI / WebAPI
 
