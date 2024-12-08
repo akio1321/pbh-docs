@@ -43,9 +43,9 @@ Starting with `v7.2.0`, qBittorrent will automatically disable this option when 
 ![step3](assets/qBittorrent-step3.png)
 ![step4](assets/qBittorrent-step4.png)
 
-## Add qBittorrent Downloaders in PeerBanHelper
+## Add qBittorrent Downloader in PeerBanHelper
 
-Follow these steps to add the downloaders:
+Follow these steps to add the downloader:
 
 1. Open PeerBanHelper's Add Downloader window.
 2. In the top-down list of downloader types, select "qBittorrent".
