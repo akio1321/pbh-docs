@@ -3,6 +3,6 @@
   "position": 50,
   "link": {
     "type": "generated-index",
-    "description": "分析和检查 Peers 数据"
+    "description": "一组用于分析和检查 Peers 数据的工具"
   }
 }
