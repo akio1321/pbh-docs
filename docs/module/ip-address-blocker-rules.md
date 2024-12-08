@@ -3,7 +3,9 @@
 PeerBanHelper 的重要模块之一，默认订阅来自 [PBH-BTN/BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) 的规则。  
 当有规则内的 IP 连接下载器时，PeerBanHelper 会立刻封禁它。
 
-不建议通过配置文件配置此功能，您可以直接使用 WebUI 的可视化编辑。
+:::tip
+不建议通过配置文件配置此功能，您可以直接使用 WebUI 的可视化编辑
+:::
 
 ![rules-sub](./assets/sub-rules.png)
 

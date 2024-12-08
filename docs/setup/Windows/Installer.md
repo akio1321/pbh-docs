@@ -3,33 +3,35 @@ sidebar_position: 1
 ---
 
 
-# 安装器
+# 使用安装器部署
 
-## 下载和安装
+## 下载与安装步骤
 
-打开 [GitHub Releases](https://github.com/PBH-BTN/PeerBanHelper/releases/latest)。你会找到四个以 `.exe` 结尾的安装程序。
+请访问 [GitHub Releases 页面](https://github.com/PBH-BTN/PeerBanHelper/releases/latest) 以获取最新版本的 PeerBanHelper 安装程序。在该页面上，您将看到三个以 `.exe` 结尾的安装文件。
 
-其中，一种带有 `nojava` 标记，另一种不带。如果你对什么是 Java 不熟悉，请选择**不带**nojava标记的下载。
+其中，一个带有 `nojava` 标识，另一个则没有。若您对 Java 不甚了解，建议选择**未带** `nojava` 标识的版本进行下载。
 
-然后，你还会注意到还有 `x64` 和 `arm64` 的区别：
-* 普通用户，请全部统一下载带有 `x64` 标记的 `.exe` 安装程序。
-* 如果你是不幸购买了高通骁龙 ARM 架构处理器的 Windows 笔记本的倒霉蛋小白鼠用户：请下载带有 `arm64` 的 `.exe` 安装程序。
+此外，您还会注意到有 `amd64` 和 `aarch64` 两种版本的区别：
+- 对于大多数用户，请默认选择带有 `amd64` 标识的 `.exe` 安装程序。
+- 如果您使用的是搭载高通骁龙 ARM 架构处理器的 Windows 笔记本电脑（较为少见），请下载带有 `aarch64` 标识的 `.exe` 安装程序。
 
-### 开机启动
+### 设置开机自启
 
-勾选随系统启动时，当您登录到 Windows 桌面，PBH 就会静默启动到系统托盘。
+在安装过程中，若您勾选了“随系统启动”选项，当您登录 Windows 桌面时，PeerBanHelper 将自动启动并静默运行于系统托盘。
 
-## GUI/Safe Mode/NoGUI
+## 运行模式选择
 
-### GUI
+PeerBanHelper 提供了三种运行模式供您选择：GUI、GUI Silent 和 NoGUI。
 
-顾名思义，以图形窗口启动 PeerBanHelper。会有一个窗口可以查看日志，以及一个可以打开数据文件夹和免登录打开 WebUI 的菜单。
-点击窗口的关闭按钮，就可以最小化到系统托盘图标。
+### GUI 模式
 
-## Safe Mode
+顾名思义，GUI 模式将以图形用户界面启动 PeerBanHelper。该界面提供日志查看功能，以及打开数据文件夹和免登录访问 WebUI 的便捷菜单。
+您可通过点击窗口的关闭按钮，将其最小化至系统托盘图标，并可以双击打开图形用户界面，或右键查看部分信息。
 
-是 PBH 旧版本的 GUI，无需下载依赖。当 JavaFx 下载失败时会自动进入 Safe Mode。比目前的 GUI 稳定一些，但功能较少。
+### GUI Silent 模式
 
-### NoGUI
+与 GUI 模式相似，但启动时不会显示图形窗口，仅在系统托盘处显示一个图标，并可以双击打开图形用户界面，或右键查看部分信息。此模式适合偏好静默启动的用户。
 
-以控制台的模式情况，最节约资源。适合硬核用户。
+### NoGUI 模式
+
+NoGUI 模式以控制台形式运行，资源占用最低。此模式更适合高级用户或需要最小化资源使用的场景。

@@ -1,0 +1,8 @@
+{
+  "label": "平台特定功能",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "在不同平台上的专有功能"
+  }
+}

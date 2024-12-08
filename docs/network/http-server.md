@@ -1,8 +1,8 @@
-# HTTP 服务器
+# HTTP 服务器配置
 
-PeerBanHelper 内置了 Javalin 作为内置 HTTP 服务器，以提供 WebUI 管理界面，并和部分下载器进行交互。
+PeerBanHelper 集成了 Javalin 作为其内置的 HTTP 服务器，以支持 WebUI 管理界面，并与部分下载器进行交互。
 
-## 更改 WebUI 端口
+## 修改 WebUI 端口号
 
 ```yaml
 # Http 服务器设置
@@ -17,7 +17,9 @@ server:
 
 ![webui-settings](./assets/webui-settings.png)
 
-## 关闭公网监听，仅开放本地的 WebUI 和下载器封禁列表提供端点访问
+## 限制 WebUI 监听本地网络
+
+为了提升安全性，您可以将 WebUI 的监听地址配置为仅允许本地访问。
 
 ```yaml
 # Http 服务器设置
@@ -35,12 +37,13 @@ server:
 `127.0.0.1`：监听本地回环端口（仅本机可以访问）  
 `网卡 IP 地址`：只有对应网卡的流量可以访问
 
-## 使用外部 WebUI
+将 `address` 设置为 `"127.0.0.1"` 可以确保只有本地机器能够访问 WebUI 和下载器封禁列表的端点。
 
-PeerBanHelper 可以从文件系统加载外部 WebUI 文件。
+## 使用自定义 WebUI
 
-首先需要在 `data/` 文件夹手动创建一个 `static` 目录，里面放置 WebUI 文件。  
-然后在配置文件中手动添加一行隐藏配置，让 PBH 使用外部 WebUI 文件：
+PeerBanHelper 支持从文件系统加载自定义的 WebUI 文件。
+
+您需要在 `data/` 文件夹下手动创建一个名为 `static` 的目录，并将自定义的 WebUI 文件放置在其中。然后，在配置文件中添加相应的设置以启用自定义 WebUI：
 
 ```yaml
 # Http 服务器设置
@@ -51,9 +54,9 @@ server:
   external-webui: true
 ```
 
-## 使用不同域的 WebUI
+## 跨域资源共享（CORS）设置
 
-PeerBanHelper 开启了 CORS 保护，如果使用来自其它位置（非内置 HTTP 服务器提供）的 WebUI，则会被 CORS 拒绝。因此您需要禁用 CORS 保护：
+出于安全考虑，PeerBanHelper 默认启用了 CORS 保护。如果您使用非内置 HTTP 服务器提供的 WebUI，则需要禁用 CORS 保护。
 
 ```yaml
 # Http 服务器设置
@@ -67,12 +70,13 @@ server:
 
 或者在 WebUI 中直接切换 “允许 CORS” 开关。
 
-## 更改 WebUI Token
+注意：将 `allow-cors` 设置为 `true` 可以允许跨域访问，但请注意这可能会带来安全风险。
 
-如果不幸忘记了 WebUI 的 Token 是什么，又或者您想修改下 Token，则可以在配置文件中修改：
+## 修改 WebUI Token
+
+如果您忘记了 WebUI 的访问令牌，或者希望更改令牌，可以在配置文件中进行更新：
 
 ```yaml
-
 # Http 服务器设置
 # Http Server Settings
 server:
@@ -82,19 +86,18 @@ server:
   token: ""
 ```
 
-或者在 WebUI 中直接修改，修改后需要重新登录。
+## 开发自定义 WebUI/WebAPI
 
-## 开发自己的 WebUI / WebAPI
 
-我们鼓励开发者为 PeerBanHelper 编写或改进 WebUI。
+我们鼓励开发者为 PeerBanHelper 创建或改进 WebUI。
 
-自 v6.0.1 开始，您可以在这里查看完整的 API 文档：
+自 v6.0.1 版本起，您可以在以下链接查看完整的 API 文档：
 
 [https://peerbanhelper.apifox.cn](https://peerbanhelper.apifox.cn)
 
-请注意：如果 WebAPI 连续鉴权失败 10 次，您的 IP 地址会被防暴力破解系统屏蔽 15 分钟。
+请注意：若 WebAPI 连续鉴权失败达到 10 次，您的 IP 地址将被防暴力破解系统屏蔽 15 分钟。
 
-## 配置文件
+## 完整的配置文件示例
 
 ```yaml
 # Http 服务器设置

@@ -1,0 +1,8 @@
+{
+  "label": "网络和 HTTP 服务器",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "PeerBanHelper 的网络和内置 HTTP 服务器设置"
+  }
+}

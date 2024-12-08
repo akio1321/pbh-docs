@@ -2,15 +2,24 @@
 sidebar_position: 2
 ---
 
-# 便携版
+# 使用便携版
 
-## 下载和安装
+## 下载与安装流程
 
-从 [GitHub Releases](https://github.com/PBH-BTN/PeerBanHelper/releases/latest) 下载以 `.zip` 结尾的 Windows Portable 压缩包。
-解压即用。
+请访问 [GitHub Releases](https://github.com/PBH-BTN/PeerBanHelper/releases/latest) 页面，下载标注为 Windows Portable 的 `.zip` 格式压缩包。
 
-## 升级
+解压该压缩包至您希望存放 PeerBanHelper 的任意目录，解压后即可直接使用。
 
-要升级 Portable 包，首先将 `data` 数据文件夹挪出工作目录到其他位置。删除原来的文件夹并重新解压新版本的 Portable 包，并将 `data` 数据文件夹挪回原来的位置即可。
+## 升级操作说明
 
-**特别注意：你必须重新解压所有的文件，不可以覆盖！不可以覆盖！不可以覆盖！不可以覆盖！不可以覆盖！不可以覆盖！不可以覆盖！必须重新解压所有内容！**
+:::warning
+在升级便携版时，**切勿**直接覆盖旧文件，而需要**完整重新解压新版本的所有文件**。
+:::
+
+升级步骤如下：
+1. 首先，将当前的 `data` 文件夹（包含您的配置数据和记录）移动至一个临时位置。
+2. 删除原有的 PeerBanHelper 便携版文件夹及其内容。
+3. 解压新版本的便携版压缩包至原位置或您希望存放的新位置。
+4. 将之前移动的 `data` 文件夹移回至新解压的 PeerBanHelper 文件夹内，以确保您的配置和记录得以保留。
+
+完成上述步骤后，您已成功升级至最新版本的 PeerBanHelper 便携版。
