@@ -1,6 +1,6 @@
 # 代理服务器
 
-尽管修改 JVM 参数也能让 PBH 使用代理服务器，但我们推荐您通过配置文件修改相关配置。
+Although modifying JVM parameters can also enable PBH to use a proxy server, we recommend that you modify the relevant configuration through the configuration file.
 
 ## 配置文件
 ```yaml

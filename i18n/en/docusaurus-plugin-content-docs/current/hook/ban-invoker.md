@@ -1,9 +1,8 @@
-# 封禁执行器
+# Banlist invoker
 
-## 生成本地 ipfilter.dat
+## Generate Local ipfilter.dat
 
-PBH 可以在封禁 IP 的同时生成一份 `ipfilter.dat` 文件给其它下载器使用。
-
+PBH can generate an `ipfilter.dat` file for other downloaders while banning IPs.
 
 ```yaml
 # 封禁列表处理
@@ -17,7 +16,7 @@ banlist-invoker:
     enabled: false
 ```
 
-生成的文件内容示例如下：
+An example of the generated file content is as follows:
 
 ```
 36.154.243.166-36.154.243.166,90,[L1]PBH Generated Rule-ebf4c937-e66a-473f-ae1b-e7e9ca673604
@@ -28,14 +27,15 @@ banlist-invoker:
 221.131.158.182-221.131.158.182,90,[L1]PBH Generated Rule-9335b44e-e7e7-47c2-8062-72aadea0127d
 ```
 
-## 执行系统命令
+## Execute System Commands
 
-在出现封禁/解封禁/清理封禁列表事件发生时，PBH 可以执行一系列系统命令。您可以使用此功能操作系统防火墙。
+When banning/unbanning/clearing the banlist, PBH can execute a series of system commands. You can use this feature to manipulate the system firewall.
+
 :::warning
-执行命令时将使用与 PBH 当前用户相同的权限执行。
+Commands will be executed with the same permissions as the current user of PBH.
 :::
 
-默认示例配置为使用 ipset 和 iptables 从系统防火墙上封禁 IP 地址。
+The default example configuration uses ipset and iptables to ban IP addresses on the system firewall.
 
 ```yaml
 # 封禁列表处理
@@ -79,7 +79,7 @@ banlist-invoker:
       - "/bin/sh -c 'ipset remove peerbanhelper-blocklist ${peer.ip}'"
 ```
 
-## 配置文件
+## Configuration File
 
 ```yaml
 # 封禁列表处理

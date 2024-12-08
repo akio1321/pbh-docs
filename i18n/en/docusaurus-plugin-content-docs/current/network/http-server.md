@@ -1,8 +1,8 @@
-# HTTP 服务器
+# HTTP Server Configuration
 
-PeerBanHelper 内置了 Javalin 作为内置 HTTP 服务器，以提供 WebUI 管理界面，并和部分下载器进行交互。
+PeerBanHelper integrates Javalin as its built-in HTTP server to support the WebUI management interface and interact with some downloaders.
 
-## 更改 WebUI 端口
+## Modify WebUI Port Number
 
 ```yaml
 # Http 服务器设置
@@ -13,7 +13,9 @@ server:
   http: 9898
 ```
 
-## 关闭公网监听，仅开放本地的 WebUI 和下载器封禁列表提供端点访问
+## Restrict Local Network Access for WebUI Listening
+
+To enhance security, you can configure the listening address of the WebUI to allow only local access.
 
 ```yaml
 # Http 服务器设置
@@ -25,12 +27,13 @@ server:
   address: "0.0.0.0"
 ```
 
-## 使用外部 WebUI
+Setting `address` to `"127.0.0.1"` ensures that only local machines can access the endpoints for the WebUI and the download ban list.
 
-PeerBanHelper 可以从文件系统加载外部 WebUI 文件。
+## Use Customized WebUI
 
-首先需要在 `data/` 文件夹手动创建一个 `static` 目录，里面放置 WebUI 文件。  
-然后在配置文件中手动添加一行隐藏配置，让 PBH 使用外部 WebUI 文件：
+PeerBanHelper supports loading a customized WebUI file from the filesystem.
+
+You need to manually create a `static` directory within the `data/` folder, and place your customized WebUI files there. Then add corresponding settings in the configuration file to enable the custom WebUI:
 
 ```yaml
 # Http 服务器设置
@@ -41,9 +44,9 @@ server:
   external-webui: true
 ```
 
-## 使用不同域的 WebUI
+## Cross-Origin Resource Sharing (CORS) Configuration
 
-PeerBanHelper 开启了 CORS 保护，如果使用来自其它位置（非内置 HTTP 服务器提供）的 WebUI，则会被 CORS 拒绝。因此您需要禁用 CORS 保护：
+Out of security considerations, PeerBanHelper enables CORS protection by default. If you are using a non-built-in HTTP server's WebUI, you need to disable the CORS protection.
 
 ```yaml
 # Http 服务器设置
@@ -55,12 +58,13 @@ server:
   allow-cors: false
 ```
 
-## 更改 WebUI Token
+Setting `allow-cors` to `true allows cross-domain access, but please be aware of potential security risks.
 
-如果不幸忘记了 WebUI 的 Token 是什么，又或者您想修改下 Token，则可以在配置文件中修改：
+## Modify WebUI Access Token
+
+If you have forgotten the WebUI's access token or wish to change it, update this in your configuration file:
 
 ```yaml
-
 # Http 服务器设置
 # Http Server Settings
 server:
@@ -70,17 +74,17 @@ server:
   token: ""
 ```
 
-## 开发自己的 WebUI / WebAPI
+## Developing Customized WebUI/WebAPI
 
-我们鼓励开发者为 PeerBanHelper 编写或改进 WebUI。
+We encourage developers to create or improve the WebUI for PeerBanHelper.
 
-自 v6.0.1 开始，您可以在这里查看完整的 API 文档：
+Since version 6.0.1, you can view the complete API documentation at:
 
 [https://peerbanhelper.apifox.cn](https://peerbanhelper.apifox.cn)
 
-请注意：如果 WebAPI 连续鉴权失败 10 次，您的 IP 地址会被防暴力破解系统屏蔽 15 分钟。
+Please note: If continuous authentication failures exceed 10 times for a WebAPI endpoint, your IP address will be blacklisted for 15 minutes by the brute-force protection system.
 
-## 配置文件
+## Complete Configuration File Example
 
 ```yaml
 # Http 服务器设置
