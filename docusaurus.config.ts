@@ -69,8 +69,8 @@ const config: Config = {
     navbar: {
       title: "PeerBanHelper",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: "PeerBanHelper",
+        src: "img/peerbanhelper-icon.png",
       },
       items: [
         {
