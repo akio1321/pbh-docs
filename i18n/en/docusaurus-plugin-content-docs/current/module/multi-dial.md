@@ -1,9 +1,17 @@
 # Multi-Dialing Blocker
 
-Some leechers acquire a large number of IP addresses from the same subnet by using multi-dialing or by exploiting insider connections within ISPs.  
-Although ARB has nearly the same functionality as this module, it only activates when a ban occurs. The multi-dialing blocker, on the other hand, does not require a ban to trigger; it actively detects connected peers.
+Some malicious users acquire a large number of IP addresses from the same subnet by using multi-dialing or similar methods.  
+Although ARB (Automatic Range Blocking) has nearly the same functionality as this module, it only activates when a ban condition is met. In contrast, the multi-dialing blocker actively monitors connected peers without waiting for a ban command.
 
-When the number of IP addresses from the same subnet exceeds the specified limit while connecting to the same torrent, subnet banning will be initiated.
+When the number of IP addresses from the same subnet exceeds the specified threshold and these IPs are connected to the same torrent, subnet banning will be initiated.
+
+![multi-dial](./assets/multi-dial.png)
+
+## Hunting
+
+If an IP is determined to be using multi-dialing, it will continue to search for all other peers within the same subnet, ignoring cache time limits.
+
+Enabling this feature will consume some additional runtime memory.
 
 ## Configuration File
 

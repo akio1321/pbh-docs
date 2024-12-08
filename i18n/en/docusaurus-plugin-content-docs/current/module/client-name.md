@@ -7,7 +7,9 @@ ClientName is an [extended protocol](https://www.bittorrent.org/beps/bep_0010.ht
 
 ## Configuration File
 
-The rules use the [JSON Rules Engine](../misc/json-engine.md) syntax.
+The rules use the [JSON Rules Engine](../misc/json-engine.md) syntax. You can control the banning behavior by writing JSON rules. However, for simple bans and exceptions, you can complete them through the WebUI.
+
+![Client Name](./assets/client-name.png)
 
 ```yaml
   # ClientName blacklist

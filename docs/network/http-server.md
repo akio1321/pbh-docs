@@ -13,6 +13,10 @@ server:
   http: 9898
 ```
 
+或者通过 WebUI 直接修改：
+
+![webui-settings](./assets/webui-settings.png)
+
 ## 限制 WebUI 监听本地网络
 
 为了提升安全性，您可以将 WebUI 的监听地址配置为仅允许本地访问。
@@ -26,6 +30,12 @@ server:
   # WebUI listen address, if you need access from non-localhost location, change it to 0.0.0.0. Locally deploy use 127.0.0.1 is recommended.
   address: "0.0.0.0"
 ```
+
+或者通过 WebUI 直接修改 “地址” 配置项。
+
+`0.0.0.0`：监听所有网卡的端口  
+`127.0.0.1`：监听本地回环端口（仅本机可以访问）  
+`网卡 IP 地址`：只有对应网卡的流量可以访问
 
 将 `address` 设置为 `"127.0.0.1"` 可以确保只有本地机器能够访问 WebUI 和下载器封禁列表的端点。
 
@@ -58,9 +68,11 @@ server:
   allow-cors: false
 ```
 
-将 `allow-cors` 设置为 `true` 可以允许跨域访问，但请注意这可能会带来安全风险。
+或者在 WebUI 中直接切换 “允许 CORS” 开关。
 
-## 修改 WebUI 访问令牌
+注意：将 `allow-cors` 设置为 `true` 可以允许跨域访问，但请注意这可能会带来安全风险。
+
+## 修改 WebUI Token
 
 如果您忘记了 WebUI 的访问令牌，或者希望更改令牌，可以在配置文件中进行更新：
 
@@ -75,6 +87,7 @@ server:
 ```
 
 ## 开发自定义 WebUI/WebAPI
+
 
 我们鼓励开发者为 PeerBanHelper 创建或改进 WebUI。
 

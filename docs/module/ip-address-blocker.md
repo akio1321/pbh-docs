@@ -8,18 +8,26 @@
 
 IP 黑名单，支持输入一个或多个 IP 地址或者 CIDR 地址。列出的 IP 或者被 CIDR 包含的 IP 将在连接下载器时被封禁。
 
+该模块接受 IPV4 地址或者 IPV6 地址，同时也支持 IPV4 和 IPV6 的 CIDR。
+
+![ip-blocker](./assets/ip-blocker.png)
+
 ## Ports
 
 端口黑名单，支持输入一个或多个端口。任意 IP 使用列出的端口连接到您的下载器时即会被封禁。
+
+该功能通常情况下没人用，此处不做解释。
 
 ## ASNs
 
 ASN 黑名单。需要配合 Maxmind GeoLite2 ASN 数据库使用。ASN 数据库应该会在启动 PBH 时伴随 IPDB 一起下载。  
 支持输入一个或者多个 [ASN](https://zh-hans.ipshu.com/asn_list)，所有在给定的 ASN 内的 IP 地址在连接到您的下载器即会被封禁。
 
+不建议中国大陆地区使用 ASN 封禁，因为 AOE 范围可能过大。
+
 ## Regions
 
-国家/地区黑名单。可以输入一个或者多个 [ISO 3166-1 国家二字母码](https://www.rr78.com/World/postal/)。需要配合 Maxmind GeoLite2 City 数据库。 City 数据库应该会在启动 PBH 时伴随 IPDB 一起下载。  
+国家/地区黑名单。可以输入一个或者多个 [ISO 3166-1 国家二字母码](https://www.rr78.com/World/postal/)。需要配合 Maxmind GeoLite2 City 数据库。 City 数据库应该会在启动 PBH 时伴随 IPDB 一起下载。 
 
 ## Cities
 
@@ -34,11 +42,22 @@ ASN 黑名单。需要配合 Maxmind GeoLite2 ASN 数据库使用。ASN 数据�
 * `北京` - 封禁北京直辖市
 * `上海` - 封禁上海直辖市
 
+
+![Region](./assets/region-rule-management.png)
+
+如图所示：第一条规则精准匹配辽宁省大连市沙河口区（其它区不受影响），第二条匹配辽宁省大连市（整个市都会被封禁）。
+
+如果你不清楚对方处于哪里（或者该怎么填写），可以使用 “数据透视” 菜单下的 [IP 查询](../statistic/ip-query.md)功能查询其地理位置。
+
+![IP Query](./assets/ip-query.png)
+
 ## Net Type
 
 网络类型黑名单。需要配合 GeoCN 数据库。 GeoCN 数据库应该会在启动 PBH 时伴随 IPDB 一起下载。  
 
 如果 IP 的网络类型被 GeoCN 数据库收录，则可以封禁对应网络类型的 IP 地址。
+
+目前只能通过配置文件编辑此设置。
 
 ## 配置文件
 

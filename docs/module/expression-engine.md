@@ -9,7 +9,14 @@ AviatorScript 允许用户加载一个用户脚本，以便在 PBH 检测 Peer �
 
 ## 安装 AviatorScript 脚本
 
-AviatorScript 脚本以 `.av` 结尾。将其放入 `data/scripts/` 目录即可加载。
+AviatorScript 脚本以 `.av` 结尾。将其放入 `data/scripts/` 目录即可加载。  
+如果你是本地安装，则可以直接通过 WebUI 管理脚本。
+
+![expression-engine](./assets/expression-engine.png)
+
+特别的，如果你是在内网环境下，则还可以直接上传和编辑脚本文件。
+
+![expression-engine-2](./assets/expression-engine-2.png)
 
 ## 制作 AviatorScript 脚本
 

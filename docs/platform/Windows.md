@@ -4,6 +4,10 @@
 
 在 Windows 11 的 22H2 版本或更高版本中，如果系统 BIOS 和 CPU 均支持，PeerBanHelper（PBH）将自动启用 [EcoQoS](https://devblogs.microsoft.com/performance-diagnostics/introducing-ecoqos/) 节能功能。此功能旨在缓解 PBH 在执行检测任务时因瞬时计算量增加导致的 CPU 睿频及电量消耗，同时降低 PBH 的运行优先级，以便将更多系统资源分配给其他应用程序。
 
+在更旧版本的 Windows 或者平台上，此功能将仅降低自身的进程优先级。
+
+在其他操作系统上则什么都不做。
+
 当 EcoQoS 成功启用时，PBH 的图形用户界面（GUI）窗口将显示一个叶子图标，以作为启用状态的视觉提示：
 
 ![EcoQoS 图标](./assets/ecoqos.png)
