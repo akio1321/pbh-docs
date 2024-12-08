@@ -36,6 +36,9 @@ PeerBanHelper 利用 qBittorrent 的 WebAPI 与 qBittorrent 进行交互。本�
 1. 在左侧菜单中，切换到“高级”选项卡。
 2. 找到“解析用户主机名”选项，如果已被勾选，请**取消勾选**。
 3. 继续向下滚动页面，在“libtorrent 相关”部分，找到“允许来自同一 IP 地址的多个连接”选项，如果已被勾选，请**取消勾选**。
+:::tip
+在 `v7.2.0` 及以上版本，下载器连接到 PBH 时，PBH 会自动关闭“允许来自同一 IP 地址的多个连接”选项，如果你使用的版本正确，则无需手动配置此选项。
+:::
 
 ![step3](assets/qBittorrent-step3.png)
 ![step4](assets/qBittorrent-step4.png)
