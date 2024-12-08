@@ -3,7 +3,17 @@
 One of the important modules of PeerBanHelper, it subscribes to rules from [PBH-BTN/BTN-Collected-Rules](https://github.com/PBH-BTN/BTN-Collected-Rules) by default.  
 When an IP from the rules connects to the downloader, PeerBanHelper will immediately block it.
 
+:::tip
 It is not recommended to configure this feature through the configuration file; you can directly use the visual editor in the WebUI.
+:::
+
+![rules-sub](./assets/sub-rules.png)
+
+By default, the rule subscription module updates all subscription rules every time PeerBanHelper starts or every 4 hours. You can click the gear icon to change the update frequency of the subscription rules.
+
+If you need to check the changes in the rules or whether the update was successful, you can click the "View History" button to view the update history.
+
+![rules-sub-logs](./assets/sub-rules-logs.png)
 
 ## Creating Rules
 

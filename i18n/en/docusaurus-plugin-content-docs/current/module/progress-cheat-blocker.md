@@ -1,10 +1,10 @@
 # Progress Checker
 
-The Progress Cheat Blocker (ProgressCheatBlocker), sometimes referred to as PCB or the heuristic detection algorithm, is a heuristic anti-cheating algorithm based on download progress, created by PeerBanHelper.
+The Progress Checker (ProgressCheatBlocker) (sometimes referred to as PCB or heuristic detection algorithm) is a heuristic anti-leech detection algorithm based on download progress created by PeerBanHelper.
 
 ## Overview
 
-Traditional anti-cheating methods usually rely on checking PeerID or ClientName for blocking. This works well for peers like *Thunder* or *QQ旋风* that truthfully report their PeerID. However, if a malicious cheater impersonates a normal client like qBittorrent or Transmission, traditional methods become ineffective.
+Traditional anti-leech methods usually rely on checking PeerID or ClientName to block peers. This works well for peers like *Xunlei* or *QQDownload* that report their PeerID truthfully. However, if malicious leechers impersonate normal clients like qBittorrent or Transmission, traditional anti-leech methods will completely fail.
 
 PeerBanHelper continuously tracks the active peers on all active torrents, monitoring their progress in real-time. PeerBanHelper will block peers when the following conditions occur:
 
@@ -18,6 +18,30 @@ For the Progress Checker, progress determination is based not on individual IP a
 * For IPv6, the default group size is `/60`, which is typically the prefix size assigned to routers.
 
 PBH continuously tracks the peer’s download progress and calculates their upload volume and upload increments. When a peer's statistics are reset for some reason (e.g., changing port or PeerID), PBH corrects their progress using previously recorded data to prevent progress cheating.
+
+![PCB](./assets/pcb.jpeg)
+
+## Progress Discrepancy
+
+PeerBanHelper calculates the peer's current minimum progress based on downloader data, local record data, and peer-reported data. If the peer's progress is less than the minimum progress (false reporting progress), PeerBanHelper will block the peer.
+
+## Excessive Download
+
+The goal of malicious peers is to download as much data as possible from the victim. Therefore, PeerBanHelper calculates the peer's downloaded volume based on downloader data, local record data, and peer-reported data.
+
+This calculated download volume does not rely entirely on the downloader, as attackers can easily deceive and reset the downloader's statistics.
+
+If the peer's downloaded volume exceeds a certain proportion of the total volume of data owned by the current user (i.e., downloading more data than the total size of the torrents owned), PeerBanHelper will block the peer.
+
+## Persistent Records
+
+When turned off, all data is stored in memory. When memory is insufficient or not used for a period of time, the data will be cleared and deleted. At this point, PeerBanHelper will "forget" the previously recorded data.
+
+When persistent records are enabled, the data will be saved to the database before being deleted from memory and reloaded when needed in the future (as long as the data has not expired). This effectively prevents attackers from using guerrilla tactics and cache forgetting attacks.
+
+## Quick PCB Test
+
+A quick detection algorithm. When the peer's download progress (calculated) reaches the "Quick PCB Test Activation Threshold," PeerBanHelper will temporarily block the peer (default is 30 seconds) to disconnect and then unblock shortly after. Some malicious clients will reset their reported progress to zero after disconnecting, allowing PCB anti-cheat to immediately capture this anomaly and speed up the blocking of abnormal and malicious clients, reducing traffic loss.
 
 ## Configuration File
 

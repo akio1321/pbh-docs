@@ -9,7 +9,14 @@ Sometimes, when PBH encounters a new variant and cannot release a new PBH versio
 
 ## Installing AviatorScript Scripts
 
-AviatorScript scripts end with `.av`. Simply place them in the `data/scripts/` directory to load them.
+AviatorScript scripts end with `.av`. Simply place them in the `data/scripts/` directory to load them.  
+If you have a local installation, you can manage the scripts directly through the WebUI.
+
+![expression-engine](./assets/expression-engine.png)
+
+Additionally, if you are in an intranet environment, you can directly upload and edit script files.
+
+![expression-engine-2](./assets/expression-engine-2.png)
 
 ## Creating AviatorScript Scripts
 

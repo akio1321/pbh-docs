@@ -1,7 +1,12 @@
 # PeerID Filter
 
-The PeerID filter detects using the PeerID actively reported by the Peer. For clients with a built-in PeerID filter (e.g., qBittorrent Enhanced Edition), it is recommended to use their built-in PeerID filtering feature first.  
-Note that the PeerID is reported by the Peer itself (and can be modified at will), so it cannot be used as the sole basis for determining the client.
+The PeerID filter detects using the PeerID actively reported by the Peer. For clients with a built-in PeerID filter (e.g., qBittorrent Enhanced Edition), it is recommended to use their built-in PeerID filtering feature first.
+
+:::warning
+The PeerID is reported by the Peer itself (and can be modified at will), so it cannot be used as the sole basis for determining the client.
+:::
+
+![peer-id](./assets/peer-id.png)
 
 ## Configuration File
 

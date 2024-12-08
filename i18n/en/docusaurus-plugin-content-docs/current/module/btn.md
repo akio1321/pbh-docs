@@ -1,13 +1,7 @@
 # BTN Cloud Rules
 
-Use cloud rules from the BTN network. You need to [configure PBH to access BTN](../btn/connect.md) in advance.
+Use cloud rules from the BTN network. You need to [configure PBH to connect to BTN](../btn/connect.md) in advance.
 
-## Configuration File
+If only BTN is connected but the BTN rules module is not enabled, only upload data will be submitted, and BTN cloud rules will not be used.
 
-```yaml
-  # Enable the network rules from BTN server
-  # Only works when you have configured the BTN server in config.yml
-  btn:
-    enabled: true
-    # Ban duration, in milliseconds. Use 'default' to follow the global settings
-    ban-duration: 259200000
+![BTN-Profile](./assets/btn-profile.png)
