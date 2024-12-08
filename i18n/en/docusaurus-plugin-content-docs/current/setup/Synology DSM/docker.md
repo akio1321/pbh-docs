@@ -61,7 +61,7 @@ Continue with the next steps and start the container. After the first start, the
 
 ### Reason 1: Using 127.0.0.1
 
-See: [FAQ](../../faq.md#127001-or-localhost-cannot-connect-to-downloader)
+See: [FAQ](../../faq.md#cant-connect-to-the-downloader-via-127001-or-localhost)
 
 ### Reason 2: PBH Container Has Not Automatically Joined the Bridge Network Group
 

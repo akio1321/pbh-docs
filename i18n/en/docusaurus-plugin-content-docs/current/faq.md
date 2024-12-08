@@ -14,7 +14,7 @@ If you don't know what this is for, please run the uninstaller to remove the sys
 
 ### If Uplay/Ubisoft Connect is running; other programs occupy the WebUI port
 
-Please exit first, or [change the WebUI port](./network/http-server.md#change-webui-port)
+Please exit first, or [change the WebUI port](./network/http-server.md#modify-webui-port-number)
 
 ## Can't connect to the downloader via 127.0.0.1 or localhost
 
@@ -47,7 +47,7 @@ See: [Configure Proxy Server](./network/proxy-server.md)
 
 ## Where is the WebUI management Token?
 
-See: [Change WebUI Token](./network/http-server.md#change-webui-token)
+See: [Change WebUI Token](./network/http-server.md#modify-webui-access-token)
 
 ## What are the disadvantages of Transmission/Why is it abandoned?
 
