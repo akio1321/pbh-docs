@@ -4,46 +4,54 @@ sidebar_position: 1
 
 # qBittorrent
 
-PeerBanHelper interacts with qBittorrent using the qBittorrent WebAPI. This chapter will guide you on enabling the WebUI for qBittorrent and connecting PeerBanHelper to qBittorrent.  
-For Linux and Docker users running qBittorrent, you may have already configured the WebUI and can skip the initial steps.
+PeerBanHelper leverages the WebAPI of qBittorrent to interact with it. This chapter will guide you on how to enable the WebUI for qBittorrent and successfully connect it to PeerBanHelper. For users using qBittorrent in Linux or Docker environments, if your WebUI is already configured, you can skip through the relevant steps.
 
 ## Enable WebUI
 
-Click the gear icon on the main page to open the settings menu.
+Click on the gear icon at the main page to open the settings menu.
 
 ![step1](assets/qBittorrent-step1.png)
 
-Then, follow these steps:
+Next, follow these steps:
 
-1. In the left menu, switch to the "WebUI" tab.
-2. Check "Web User Interface (Remote control)."
-3. Configure a port number. In this example, we use `7474`. Note: The IP address refers to the "Listening interface address." If you're unsure what this means, leave it as the default (`*`).
-4. Under "Authentication," set a username and a strong password. A strong password is crucial to prevent unauthorized access, as anyone with your credentials can manipulate downloads or execute commands/programs via qBittorrent.
-5. Finally, click the "Apply" button at the bottom-right to save your settings.
+1. Switch to the "WebUI" tab in the left sidebar.
+2. Check the box for "Enable Web User Interface (Remote Control)".
+3. Configure a port number; we use `7474` as an example. Note that the term "IP Address" here refers to the "Listen Network Card Address". If you're unsure about its meaning, keep it at the default of `*`, but ensure your firewall is configured correctly so that only necessary ports are accessible.
+4. In the "Authentication" section, set a username and a strong password. If someone guesses the password, they might access qBittorrent's download files or execute commands/programs.
+5. Finally, click on the bottom-right button to apply the settings.
+
+:::warning
+**Security Tip**
+- Set strong passwords to protect your qBittorrent.
+- If you only use it locally, consider restricting access to `127.0.0.1`.
+- Ensure that your firewall is configured correctly and only allows necessary ports.
+:::
 
 ![step2](assets/qBittorrent-step2.png)
 
-## Configure Advanced Settings
+## Configure Advanced Options
 
-In addition to enabling the WebUI, there are additional settings to ensure PeerBanHelper works correctly:
+In addition to enabling WebUI, some configuration adjustments are needed for PeerBanHelper to function properly:
 
-1. In the left menu, switch to the "Advanced" tab.
-2. Locate "Resolve peer hostnames" and **uncheck** it if it is enabled.
-3. Scroll further down to the "libtorrent" section and find "Allow multiple connections from the same IP address." **Uncheck** it if it is enabled.
+1. Switch to the "Advanced" tab in the left sidebar.
+2. Uncheck the box next to "Resolve User Hostnames".
+3. Scroll down to the "libtorrent-related" section and uncheck the option titled "Allow multiple connections from the same IP address". 
+:::tip
+Starting with `v7.2.0`, qBittorrent will automatically disable this option when a downloader connects to PBH.
+:::
 
 ![step3](assets/qBittorrent-step3.png)
 ![step4](assets/qBittorrent-step4.png)
 
-## Add qBittorrent Downloader in PeerBanHelper
+## Add qBittorrent Downloaders in PeerBanHelper
 
-Follow these steps to add a qBittorrent downloader in PeerBanHelper:
+Follow these steps to add the downloaders:
 
-1. Open the Add Downloader window.
-2. Select "qBittorrent" as the downloader type.
-3. Choose a name for the downloader. The name can be arbitrary but must not contain periods (`.`).
-4. In the address field, enter `http://localhost:7474`, where `7474` is the port number you set earlier. Be careful not to end the address with a `/`.
-5. Enter the username set in the "Authentication" section above.
-6. Enter the password set in the "Authentication" section above.
-7. Click "OK." If the connection test is successful, the downloader is successfully added.
+1. Open PeerBanHelper's Add Downloader window.
+2. In the top-down list of downloader types, select "qBittorrent".
+3. You can leave the name field empty but ensure it doesn't contain a period (`. `).
+4. In the address bar, enter `http://localhost:7474`, where `7474` is the port number you configured earlier. When entering the URL, make sure not to end with a forward slash (`/`).
+5. For the username and password, use the credentials set in the "Authentication" section.
+6. Click on the "OK" button to confirm; if prompted successfully, it indicates that the addition was successful.
 
 ![step5](assets/qBittorrent-step5.png)
