@@ -1,19 +1,19 @@
-# IP 查询
+# IP Query
 
-IP 查询能够查询给定 IP 地址在 PeerBanHelper 的 GeoIP 数据中的记录信息。如果解锁了 PBH Plus，则还会显示此 IP 的封禁历史和访问历史数据。
+IP Query allows you to query the record information of a given IP address in PeerBanHelper's GeoIP data. If PBH Plus is unlocked, it will also display the ban history and access history data of this IP.
 
 ![ip-query](./assets/ip-query.jpeg)
 
-## 访问历史
+## Access History
 
-启用 [主动检测 Active Monitoring](../module/active-monitoring.md) 后，将会记录访问历史数据。您可以查看该 Peer 造访您的下载器上的不同种子时的统计数据。
+After enabling [Active Monitoring](../module/active-monitoring.md), access history data will be recorded. You can view the statistics of this Peer visiting different torrents on your downloader.
 
-## 封禁历史
+## Ban History
 
-记录该 IP 地址下所有关联的封禁操作。
+Records all associated ban operations under this IP address.
 
-## 快捷链接
+## Quick Links
 
-提供两个很好用的外部 IP 分析工具，可以分析 IP 的异常情况和其上运行的服务。
+Provides two very useful external IP analysis tools that can analyze the anomalies of the IP and the services running on it.
 
-这两个外部工具均与 PeerBanHelper 或 PBH-BTN 无关，我们也不对其上面的信息负责。
+These two external tools are not related to PeerBanHelper or PBH-BTN, and we are not responsible for the information on them.

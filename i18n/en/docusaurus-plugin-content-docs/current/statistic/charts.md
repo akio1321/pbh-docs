@@ -1,42 +1,61 @@
-# 图表
+# Charts
 
-图表是 PBH Plus 的功能之一，可以让您直观的查看目前下载器上活动的 Peers 的各类信息。
+The charts feature in PBH Plus provides visual representations of various statistics related to active peers on your downloader. The interface includes several types of charts:
 
-![charts](./assets/charts.jpeg)
+## Ban Statistics
+View ban curves over your selected time range. You can adjust the time interval in the settings.
 
-要查看不同下载器的信息，可在顶部的 TAB 标签栏切换不同下载器标签。
+## Multi-dimensional Pie Charts
+Analyze data across three dimensions:
+- Number of bans per PeerID
+- Seeds with highest IP bans 
+- Functional modules contributing to bans
 
-## 封禁统计
+## Location and ISP Data
+Another multi-dimensional pie chart showing data across four dimensions:
+- ISP/AS
+- Country/Region
+- Province
+- City
 
-显示了在选定时间范围内的封禁曲线。可以在设置中调整要查看的时间区间范围。
+By default shows only ban-related data, but you can switch to view all session data.
 
-## 多维图饼
-
-可以在 PeerID、种子名称、功能模块三个维度切换，查看以下数据：
-
-* 不同 PeerID 的封禁数量
-* 哪些种子下的 IP 地址封禁数量最多
-* 哪个功能模块在封禁中发挥了最大的作用
-
-## 位置与运营商
-
-这也是个多维图饼，可以查看运营商/AS、国家/地区、省、城市四个维度的数据。  
-默认情况下只显示与封禁有关的数据，但也可以切换到所有会话数据。
-
-## 流量统计
-
+## Traffic Statistics
 :::warning
-
-数据由于采样间隔、计算机制等问题，可能存在偏差。数据仅供参考，如需准确数据，请以下载器的统计数据为准。
-
-BitComet 和 Deluge 暂不支持此功能。
-
+Due to sampling intervals and calculation methods, there may be discrepancies in the data. Please rely on downloader statistics for accuracy.
 :::
 
-显示了在选定时间范围内的以天为单位的上传、下载流量曲线。可以在设置中调整要查看的时间区间范围。
+Shows upload and download traffic curves over your selected time range. Time interval can be adjusted in settings.
 
-## 趋势
+## Trends
+Shows changes in session access and ban counts over the selected timeframe. Note that a higher number of bans compared to sessions is not an error - a peer is only counted as a session when it connects and generates traffic.
 
-显示了在选定时间范围内的以天为单位的会话访问和封禁数量的变化趋势。
+# docs/statistic/ip-query.md
+# IP Query
 
-有时您可能发现封禁数量比会话数量更多，这并不是错误，而是因为 Peer 只有连接到下载器并且产生流量时才会被计算为一次会话，而封禁可以在产生流量前就切断 Peer 的连接。
+Query information about an IP address from PeerBanHelper's GeoIP data. If you have unlocked PBH Plus, you can also access:
+
+## Access History
+With Active Monitoring enabled, records statistics of different torrents visited by the peer on your downloader.
+
+## Ban History
+Logs all ban operations associated with this IP address.
+
+You can also use these external IP analysis tools to investigate anomalies and services running on the IP:
+- [Censys Search](https://search.censys.io/)
+- [Shodan](https://www.shodan.io/)
+
+Note: These tools are not affiliated with PeerBanHelper or PBH-BTN. Information provided by them is not under PeerBanHelper's responsibility.
+
+# docs/statistic/torrents.md
+# Seed Query
+
+PeerBanHelper records essential metadata of active torrents, including name, infohash and size, and caches this information in a database. This prevents duplicate entries and optimizes disk space usage.
+
+The seed query module uses this recorded data to display connection and ban status of torrents associated with PeerBanHelper.
+
+Click the button to query records, which will take you to a detailed page showing all access or ban records related to that torrent.
+
+:::tip
+If your download client fails and you lose all saved torrents, you can reconstruct magnet links using the recorded hash values to re-download the metadata.
+:::
