@@ -43,8 +43,9 @@ services:
 
 ```shell
 docker run -d \
-    --name peerbanhelper \
+    --name PeerBanHelper \
     --restart unless-stopped \
+    --stop-timeout 30 \
     -p 9898:9898 \
     -v ${PWD}/:/app/data/ \
     -e PUID=0 \
