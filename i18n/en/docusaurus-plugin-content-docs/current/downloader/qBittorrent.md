@@ -37,7 +37,7 @@ In addition to enabling WebUI, some configuration adjustments are needed for Pee
 2. Uncheck the box next to "Resolve User Hostnames".
 3. Scroll down to the "libtorrent-related" section and uncheck the option titled "Allow multiple connections from the same IP address". 
 :::tip
-Starting with `v7.2.0`, qBittorrent will automatically disable this option when a downloader connects to PBH.
+Starting with version `v7.2.0`, qBittorrent will automatically disable the "Allow multiple connections from the same IP address" option when a downloader connects to PBH, so you needn't to manually configure it if your version is correct.
 :::
 
 ![step3](assets/qBittorrent-step3.png)
@@ -49,7 +49,7 @@ Follow these steps to add the downloader:
 
 1. Open PeerBanHelper's Add Downloader window.
 2. In the top-down list of downloader types, select "qBittorrent".
-3. You can leave the name field empty but ensure it doesn't contain a period (`. `).
+3. You can leave the name field empty but ensure it doesn't contain a period (`.`).
 4. In the address bar, enter `http://localhost:7474`, where `7474` is the port number you configured earlier. When entering the URL, make sure not to end with a forward slash (`/`).
 5. For the username and password, use the credentials set in the "Authentication" section.
 6. Click on the "OK" button to confirm; if prompted successfully, it indicates that the addition was successful.
