@@ -1,0 +1,8 @@
+{
+  "label": "统计与分析工具",
+  "position": 50,
+  "link": {
+    "type": "generated-index",
+    "description": "分析和检查 Peers 数据"
+  }
+}
