@@ -24,8 +24,8 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-		"@docusaurus/core": "3.6.3",
-		"@docusaurus/preset-classic": "3.6.3",
+		"@docusaurus/core": "3.6.3-canary-6169",
+		"@docusaurus/preset-classic": "3.6.3-canary-6169",
     "@easyops-cn/docusaurus-search-local": "^0.44.5",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
@@ -34,10 +34,11 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-		"@docusaurus/module-type-aliases": "3.6.3",
-		"@docusaurus/tsconfig": "3.6.3",
-		"@docusaurus/types": "3.6.3",
-    "typescript": "~5.5.2"
+		"@docusaurus/module-type-aliases": "3.6.3-canary-6169",
+		"@docusaurus/tsconfig": "3.6.3-canary-6169",
+		"@docusaurus/types": "3.6.3-canary-6169",
+    "typescript": "~5.5.2",
+    "@types/react": "18.2.14"
   },
   "browserslist": {
     "production": [
