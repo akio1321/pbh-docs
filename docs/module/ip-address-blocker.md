@@ -88,7 +88,7 @@ ASN 黑名单。需要配合 Maxmind GeoLite2 ASN 数据库使用。ASN 数据�
     # Banning ASN (Require config GeoIP-ASN database)
     asns:
       - "0"
-    #  - 0 # 网络 ASN 好
+    #  - 0 # 网络 ASN 号
     # 按国家或地区封禁（需要配置 GeoIP-City 数据库才能工作！）
     # Banning as Country/Region code
     regions:
