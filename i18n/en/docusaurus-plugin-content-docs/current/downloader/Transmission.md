@@ -4,6 +4,12 @@ sidebar_position: 999
 
 # Transmission
 
+:::warning
+
+All downloaders that deploy in Docker MUST use host network mode to make sure downloader can get correct incoming connection IP address, bridge will break it and not supported. PeerBanHelper may not working if you downloader not in correct network mode.
+
+:::
+
 :::danger
 
 Transmission has been marked as **deprecated** by PeerBanHelper. You should stop using it. Using Transmission **will not receive any support**. If you open an Issue or ask questions in the QQ group due to Transmission-related problems, your messages will be deleted, or you will be muted.  

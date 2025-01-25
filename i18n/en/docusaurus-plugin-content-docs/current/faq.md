@@ -1,20 +1,11 @@
 # FAQ
 
-## After upgrading, WebUI is white/black screen or stuck on infinite data loading
+## PeerBanHelper detects Peers that need to be banned but does not ban them
 
-Clear your browser cache and refresh.
+This is usually because the IP address is incorrect. Check if the IP address of the Peer that is not banned is 172.x.x.x, 10.x.x.x, 192.x.x.x, etc., which are internal network IP addresses.  
+If so, and the downloader is deployed in Docker, you must switch the container network mode of the downloader to host mode instead of bridge mode. Inbound connections forwarded by Docker will cause PBH to not work due to the loss of the real IP address.
 
-## Startup error Failed to bind to port / Port already in use. Make sure no other process is using port XXXX and try again.
-
-Two PeerBanHelpers are launched at the same time (especially common when incorrectly selected "Install as system service" during installation); or the port is occupied causing port conflict (such as Uplay/Ubisoft Connect etc.).
-
-### If it is installed as a system service
-
-If you don't know what this is for, please run the uninstaller to remove the system service from the system, and reinstall after restarting.
-
-### If Uplay/Ubisoft Connect is running; other programs occupy the WebUI port
-
-Please exit first, or [change the WebUI port](./network/http-server.md#modify-webui-port-number)
+Although you can modify the configuration to cancel this check, it is not recommended. Once you do this, PBH will **incorrectly ban all inbound connections**, so it is very necessary to set the network mode correctly.
 
 ## Can't connect to the downloader via 127.0.0.1 or localhost
 
@@ -40,6 +31,19 @@ Other Docker users: execute `sudo docker network inspect bridge` command:
 ```
 
 Connect using the above Gateway address.
+
+
+## Startup error Failed to bind to port / Port already in use. Make sure no other process is using port XXXX and try again.
+
+Two PeerBanHelpers are launched at the same time (especially common when incorrectly selected "Install as system service" during installation); or the port is occupied causing port conflict (such as Uplay/Ubisoft Connect etc.).
+
+### If it is installed as a system service
+
+If you don't know what this is for, please run the uninstaller to remove the system service from the system, and reinstall after restarting.
+
+### If Uplay/Ubisoft Connect is running; other programs occupy the WebUI port
+
+Please exit first, or [change the WebUI port](./network/http-server.md#modify-webui-port-number)
 
 ## Unable to download IPDB/GeoIP library / Proxy invalid
 

@@ -4,6 +4,12 @@ sidebar_position: 5
 
 # BitComet
 
+:::warning
+
+All downloaders that deploy in Docker MUST use host network mode to make sure downloader can get correct incoming connection IP address, bridge will break it and not supported. PeerBanHelper may not working if you downloader not in correct network mode.
+
+:::
+
 PeerBanHelper interacts with BitComet using the BitComet WebAPI. This chapter will guide you on enabling the WebAPI for BitComet and connecting PeerBanHelper to BitComet.  
 
 ## Notice

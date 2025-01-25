@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # qBittorrentEE
 
+:::warning
+
+All downloaders that deploy in Docker MUST use host network mode to make sure downloader can get correct incoming connection IP address, bridge will break it and not supported. PeerBanHelper may not working if you downloader not in correct network mode.
+
+:::
+
 The configuration for qBittorrent Enhanced Edition (qBittorrentEE) is identical to [qBittorrent](./qBittorrent.md), with some additional options.
 
 ## Additional Options

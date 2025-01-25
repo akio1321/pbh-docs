@@ -4,6 +4,12 @@ sidebar_position: 1
 
 # qBittorrent
 
+:::warning
+
+所有部署在 Docker 中的下载器，不得使用 bridge 桥接网络模式，必须使用 host 网络模式，以使下载器能够获取正确的 Peer 入站地址，否则 PeerBanHelper 将完全不会工作！ 
+
+:::
+
 PeerBanHelper 利用 qBittorrent 的 WebAPI 与 qBittorrent 进行交互。本章将详细指导您如何为 qBittorrent 启用 WebUI，并将其与 PeerBanHelper 成功连接。对于在 Linux 和 Docker 环境中使用 qBittorrent 的用户，如果您已经配置好了 WebUI，可以跳过前面的相关步骤。
 
 ## 启用 WebUI

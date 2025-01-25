@@ -1,8 +1,21 @@
 # 常见问题
 
-## 升级后 WebUI 出现白屏、黑屏或无限数据加载
+## 无法通过 127.0.0.1 或 localhost 连接到下载器（ConnectException: null）
 
-请尝试清除浏览器缓存。
+此问题通常在使用 Docker 容器部署时出现。在容器内部，`127.0.0.1` 或 `localhost` 指向容器自身，而非宿主机。
+
+**群晖用户**：请在 Container Manager 中找到 PBH 容器，使用显示的网关地址进行连接。
+
+![dsm-gateway](./assets/dsm-network-gateway.png)
+
+**其他 Docker 用户**：执行 `sudo docker network inspect bridge` 命令，找到 Gateway 地址并进行连接。
+
+## PeerBanHelper 能检测到需要封禁的 Peer 但是不封禁
+
+通常是因为 IP 地址不正确，检查没有封禁的 Peer 的 IP 地址是否是 172.x.x.x, 10.x.x.x, 192.x.x.x 等内网 IP 地址。  
+如果是，且下载器部署在 Docker 中，则必须将下载器的容器网络模式切换为 host 模式，而不能使用 bridge 模式。经过 Docker 转发的入站连接会因为丢失真实 IP 地址导致 PBH 不会工作。  
+
+尽管你可以修改配置取消这个检查，但这并不推荐。一旦你这样做，PBH 将会 **错误地封禁所有的入站连接**，因此正确的设置网络模式是非常必要的。
 
 ## 启动时报错：“Failed to bind to port / Port already in use. Make sure no other process is using port XXXX and try again.”
 
@@ -15,16 +28,6 @@
 ### 若 Uplay/Ubisoft Connect 正在运行或其他程序占用 WebUI 端口
 
 请关闭这些程序，或者[更改 WebUI 端口配置](./network/http-server.md#更改-webui-端口)。
-
-## 无法通过 127.0.0.1 或 localhost 连接到下载器（ConnectException: null）
-
-此问题通常在使用 Docker 容器部署时出现。在容器内部，`127.0.0.1` 或 `localhost` 指向容器自身，而非宿主机。
-
-**群晖用户**：请在 Container Manager 中找到 PBH 容器，使用显示的网关地址进行连接。
-
-![dsm-gateway](./assets/dsm-network-gateway.png)
-
-**其他 Docker 用户**：执行 `sudo docker network inspect bridge` 命令，找到 Gateway 地址并进行连接。
 
 ## 无法下载 IPDB/GeoIP 库或代理无效
 

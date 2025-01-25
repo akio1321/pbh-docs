@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # BiglyBT/Azureus(Vuze)
 
+:::warning
+
+All downloaders that deploy in Docker MUST use host network mode to make sure downloader can get correct incoming connection IP address, bridge will break it and not supported. PeerBanHelper may not working if you downloader not in correct network mode.
+
+:::
+
 :::tip
 
 PeerBanHelper is fully compatible with BiglyBT and provides optimal support.

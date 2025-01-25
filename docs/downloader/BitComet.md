@@ -4,6 +4,12 @@ sidebar_position: 5
 
 # BitComet
 
+:::warning
+
+所有部署在 Docker 中的下载器，不得使用 bridge 桥接网络模式，必须使用 host 网络模式，以使下载器能够获取正确的 Peer 入站地址，否则 PeerBanHelper 将完全不会工作！ 
+
+:::
+
 PeerBanHelper 利用 BitComet 的 WebAPI 与 BitComet 进行交互。本章将指导您如何为 BitComet 启用 WebAPI，并将其与 PeerBanHelper 连接。
 
 ## 注意事项

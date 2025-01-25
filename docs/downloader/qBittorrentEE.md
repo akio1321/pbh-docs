@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # qBittorrentEE
 
+:::warning
+
+所有部署在 Docker 中的下载器，不得使用 bridge 桥接网络模式，必须使用 host 网络模式，以使下载器能够获取正确的 Peer 入站地址，否则 PeerBanHelper 将完全不会工作！ 
+
+:::
+
 与 [qBittorrent](./qBittorrent.md) 的配置流程完全相同，但 qBittorrentEE 提供了一些额外的选项和功能。
 
 ## 额外选项

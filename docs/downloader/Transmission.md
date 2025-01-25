@@ -4,6 +4,12 @@ sidebar_position: 999
 
 # Transmission
 
+:::warning
+
+所有部署在 Docker 中的下载器，不得使用 bridge 桥接网络模式，必须使用 host 网络模式，以使下载器能够获取正确的 Peer 入站地址，否则 PeerBanHelper 将完全不会工作！ 
+
+:::
+
 :::danger
 
 Transmission 已被 PeerBanHepler 标记为*废弃*，你不应该继续使用它。使用 Transmission **你将不会得到任何支持**，如果你因为 Transmission 的问题到 Issues 打开 Issue/QQ群询问，则会被删除或禁言。  
