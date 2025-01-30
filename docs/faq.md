@@ -17,7 +17,8 @@
 
 尽管你可以修改配置取消这个检查，但这并不推荐。一旦你这样做，PBH 将会 **错误地封禁所有的入站连接**，因此正确的设置网络模式是非常必要的。  
 
-某些 IP 转发工具，如 Lucky, FRP 等可能会在用户空间转发数据表，这也会修改包的 IP 地址，并导致下载器中 Peer IP 显示不正确。如果您正在使用这些工具，请查看对应工具的帮助文档以寻求解决方案。
+某些 IP 转发工具，如 Lucky, FRP 等可能会在用户空间转发数据表，这也会修改包的 IP 地址，并导致下载器中 Peer IP 显示不正确。如果您正在使用这些工具，请查看对应工具的帮助文档以寻求解决方案。  
+OpenWRT/RouterOS 等高自由度路由固件可能需要检查 NAT 设定。
 
 ## 启动时报错：“Failed to bind to port / Port already in use. Make sure no other process is using port XXXX and try again.”
 

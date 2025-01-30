@@ -9,6 +9,8 @@ Although you can modify the configuration to cancel this check, it is not recomm
 
 Some IP forwarding tools, such as Lucky, FRP, etc., may forward data tables in user space, which will also modify the IP address of the packets and cause the Peer IP to be displayed incorrectly in the downloader. If you are using these tools, please refer to the corresponding tool's documentation for a solution.
 
+OpenWRT/RouterOS high flexibility router firmware may need to check NAT settings.
+
 ## Can't connect to the downloader via 127.0.0.1 or localhost
 
 This problem is mostly caused by deploying with Docker containers. Using `127.0.0.1` or `localhost` in the container points to the inside of the container, of course it can't connect.
