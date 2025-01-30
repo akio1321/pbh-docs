@@ -1,11 +1,13 @@
 # FAQ
 
-## PeerBanHelper detects Peers that need to be banned but does not ban them
+## PeerBanHelper detects Peers that need to be banned but does not ban them (Critical Error: Downloader in Incorrect Network Mode, PeerBanHelper May Not Work)
 
 This is usually because the IP address is incorrect. Check if the IP address of the Peer that is not banned is 172.x.x.x, 10.x.x.x, 192.x.x.x, etc., which are internal network IP addresses.  
 If so, and the downloader is deployed in Docker, you must switch the container network mode of the downloader to host mode instead of bridge mode. Inbound connections forwarded by Docker will cause PBH to not work due to the loss of the real IP address.
 
 Although you can modify the configuration to cancel this check, it is not recommended. Once you do this, PBH will **incorrectly ban all inbound connections**, so it is very necessary to set the network mode correctly.
+
+Some IP forwarding tools, such as Lucky, FRP, etc., may forward data tables in user space, which will also modify the IP address of the packets and cause the Peer IP to be displayed incorrectly in the downloader. If you are using these tools, please refer to the corresponding tool's documentation for a solution.
 
 ## Can't connect to the downloader via 127.0.0.1 or localhost
 
