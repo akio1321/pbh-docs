@@ -8,7 +8,7 @@ Sparkle is the official BTN server of PBH-BTN.
 
 ### Register an account, create UserApp
 
-Open the browser [https://btn-prod.ghostchu-services.top](https://btn-prod.ghostchu-services.top) and log in with GitHub authorization, an account will be automatically created.
+Open the browser and visit [https://sparkle.pbh-btn.com](https://sparkle.pbh-btn.com) and log in with GitHub authorization, an account will be automatically created.
 
 Click on the "User Applications" link in the top menu to go to the management page.
 
