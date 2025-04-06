@@ -51,3 +51,28 @@ Create a directory as the data storage location for PBH, and switch the working 
 sudo docker run -d --name peerbanhelper --stop-timeout -p 9898:9898 -v ${PWD}/:/app/data/ <tags>
 ```
 The webui will be opened at `9898`.
+
+## Using Podman Quadlet
+Create a `peerbanhelper.container` file in `/etc/containers/systemd` with the following content, update the `Volume` path as necessary:
+```ini
+[Unit]
+Description=PeerBanHelper Container
+
+[Container]
+ContainerName=peerbanhelper
+Image=<tags>
+Volume=/path/to/pbh-data:/app/data
+PublishPort=9898:9898
+Network=host
+Environment=PUID=0
+Environment=PGID=0
+Environment=TZ=UTC
+AutoUpdate=registry
+
+[Install]
+WantedBy=multi-user.target default.target
+```
+
+Replace `<tags>` with the image tag you just copied.
+
+Reload systemd with `sudo systemctl daemon-reload` and start the container now and on boot with `sudo systemctl enable --now peerbanhelper`. If you're using `:latest`, activate automatic updates with `sudo systemctl enable podman-auto-update.{service,timer}`.
