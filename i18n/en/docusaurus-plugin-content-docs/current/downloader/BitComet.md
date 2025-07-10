@@ -50,6 +50,10 @@ In the settings window, navigate to "Advanced Settings" in the left-side menu tr
 
 ![step3](./assets/BitComet-step3.png)
 
+| Older Version | Newer Version |
+| ------- | ------- |
+| ![step3](./assets/BitComet-step3.png) | ![step3-2](./assets/BitComet-step3-2.png) |
+
 ## Enable Remote Access
 
 PeerBanHelper requires the remote access feature to connect to BitComet. This feature is disabled by default and needs to be manually enabled.
