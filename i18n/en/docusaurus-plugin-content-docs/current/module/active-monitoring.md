@@ -21,6 +21,14 @@ Go to Settings -> Preferences, scroll down to find "Active Monitoring," enable t
 
 After configuring, click the "Save" button at the bottom of the page to apply the changes.
 
+## Configure Traffic Limiting
+
+Go to Settings -> Preferences, scroll down to find "Active Monitoring", enable traffic limiting and configure daily traffic limits.
+
+After enabling traffic limiting, you need to keep PeerBanHelper running continuously and ensure your downloader supports traffic data statistics. Once enabled, PeerBanHelper will dynamically adjust the downloader's speed limits between the maximum and minimum upload speed limits you've set, based on the upload traffic over the past 24 hours, ultimately controlling it near the specified total upload amount.
+
+![traffic-limit](./assets/trafficlimit.png)
+
 ## Peer Data Recorded
 
 For IP-torrent records, each IP connected to a different torrent is considered a separate session.
