@@ -75,4 +75,4 @@ WantedBy=multi-user.target default.target
 
 Replace `<tags>` with the image tag you just copied.
 
-Reload systemd with `sudo systemctl daemon-reload` and start the container now and on boot with `sudo systemctl enable --now peerbanhelper`. If you're using `:latest`, activate automatic updates with `sudo systemctl enable podman-auto-update.{service,timer}`.
+Reload systemd with `sudo systemctl daemon-reload` and start the container now and on boot with `sudo systemctl enable --now peerbanhelper.service`. If you're using `:latest`, activate automatic updates with `sudo systemctl enable podman-auto-update.{service,timer}`.
