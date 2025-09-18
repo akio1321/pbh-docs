@@ -13,28 +13,13 @@ OpenWRT/RouterOS high flexibility router firmware may need to check NAT settings
 
 ## Can't connect to the downloader via 127.0.0.1 or localhost
 
-This problem is mostly caused by deploying with Docker containers. Using `127.0.0.1` or `localhost` in the container points to the inside of the container, of course it can't connect.
+This issue usually occurs when deploying with Docker containers using the `bridge` network mode. Since `v9.0.0` version, PeerBanHelper recommends using the `host` network mode for deployment. If you are still using the `bridge` network mode, `127.0.0.1` or `localhost` inside the container will refer to the container itself, not the host machine.
 
-Synology users: Container Manager -> Container -> Find the PBH container -> Scroll down, connect using the displayed gateway address.
+**Synology users**: In Container Manager, locate the PBH container and use the displayed gateway address to connect.
 
 ![dsm-gateway](./assets/dsm-network-gateway.png)
 
-Other Docker users: execute `sudo docker network inspect bridge` command:
-
-```json
-"IPAM": {
-            "Driver": "default",
-            "Options": null,
-            "Config": [
-                {
-                    "Subnet": "172.17.0.0/16",
-                    "Gateway": "172.17.0.1"
-                }
-            ]
-        }
-```
-
-Connect using the above Gateway address.
+**Other Docker users**: Run the command `sudo docker network inspect bridge` to find the Gateway address and use it to connect.
 
 
 ## Startup error Failed to bind to port / Port already in use. Make sure no other process is using port XXXX and try again.

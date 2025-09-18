@@ -2,7 +2,7 @@
 
 ## 无法通过 127.0.0.1 或 localhost 连接到下载器（ConnectException: null）
 
-此问题通常在使用 Docker 容器部署时出现。在容器内部，`127.0.0.1` 或 `localhost` 指向容器自身，而非宿主机。
+此问题通常在使用 Docker 容器部署且网络模式为 `bridge` 时出现。自 `v9.0.0` 开始，PeerBanHelper 推荐使用 `host` 网络模式部署。如果你仍在使用 `bridge` 网络模式，则在容器内部，`127.0.0.1` 或 `localhost` 指向容器自身，而非宿主机。
 
 **群晖用户**：请在 Container Manager 中找到 PBH 容器，使用显示的网关地址进行连接。
 

@@ -38,10 +38,6 @@ PeerBanHelper 与 [imnks.com](https://imnks.com/) 携手合作，将 PeerBanHelp
 
 ## 配置下载器连接
 
-尽管 PeerBanHelper 是以套件形式安装的，但其本质上仍是一个 Docker 容器。因此，在配置网络时，需遵循 Docker 的相关步骤。当访问位于同一 NAS 上的下载器时，应使用网关地址，而非 `127.0.0.1` 或 `localhost`。网关地址可在 Container Manager（容器管理器）的“网络”选项卡下的“peerbanhelper_default”网络配置中找到。
-
-![imnks6](./assets/imnks6.jpg)
-
-请确保正确配置网络地址，以确保 PeerBanHelper 能够顺利与下载器进行通信。
+请确保正确配置网络地址，以确保 PeerBanHelper 能够顺利与下载器进行通信。在同一设备上时，使用 `127.0.0.1` 而非内网 IP 地址。
 
 

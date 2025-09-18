@@ -38,6 +38,4 @@ To manage the container, you can find the PBH project in the Container Manager.
 
 ## Configure Downloader
 
-Although you are installing the package, it is essentially (for now) still a Docker container. Therefore, you need to configure the network according to Docker steps. When accessing the downloader on the same NAS, use the gateway address instead of `127.0.0.1` or `localhost`. The gateway address can be found in Container Manager -> Network -> peerbanhelper_default.
-
-![imnks6](./assets/imnks6.jpg)
+Use `127.0.0.1` as IP if on same device, instead of LAN device IP address.

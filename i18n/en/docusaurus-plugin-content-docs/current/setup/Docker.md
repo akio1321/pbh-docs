@@ -40,14 +40,6 @@ docker-compose up -d
 ```
 The webui will be opened at `9898`.
 
-## Using docker cli
-
-Create a directory as the data storage location for PBH, and switch the working directory to this location.
-```shell
-sudo docker run -d --name peerbanhelper --stop-timeout -p 9898:9898 -v ${PWD}/:/app/data/ <tags>
-```
-The webui will be opened at `9898`.
-
 ## Using Podman Quadlet
 Create a `peerbanhelper.container` file in `/etc/containers/systemd` with the following content, update the `Volume` path as necessary:
 ```ini
