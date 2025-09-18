@@ -15,7 +15,6 @@ Please select your operating system or deployment method to view the installatio
 | Windows Portable                | [View](./setup/Windows/Portable.md)      |
 | Docker                          | [View](./setup/Docker.md)                |
 | Synology DSM(Package)           | [View](./setup/Synology%20DSM/Imnks.md)  |
-| Synology DSM(Container Manager) | [View](./setup/Synology%20DSM/docker.md) |
 | Linux Installer                 | [View](./setup/Linux/LinuxInstall4j.md)  |
 | Linux Manual Install           | [View](./setup/Linux/Manual.md)          |
 | Package Manager (Deb)           | [View](./setup/Linux/Deb.md)             |

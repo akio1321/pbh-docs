@@ -36,7 +36,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         <Translate>
-          完全支持 qBittorrent, Deluge 和 BiglyBT/Azuerus/Vuze。
+          完全支持 qBittorrent, Transmission, BitComet 和 BiglyBT/Azuerus/Vuze。
         </Translate>
       </>
     ),

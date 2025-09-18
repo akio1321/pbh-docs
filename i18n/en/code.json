@@ -356,8 +356,8 @@
 	"兼容多种下载器": {
 		"message": "Compatible with multiple downloaders"
 	},
-	"完全支持 qBittorrent, Deluge 和 BiglyBT/Azuerus/Vuze。": {
-		"message": "Fully supports qBittorrent, Deluge and BiglyBT/Azuerus/Vuze."
+	"完全支持 qBittorrent, Transmission, BitComet 和 BiglyBT/Azuerus/Vuze。": {
+		"message": "Fully supports qBittorrent， Transmission, BitComet and BiglyBT/Azuerus/Vuze."
 	},
 	"立刻开始了解 PeerBanHelper": {
 		"message": "Get started with PeerBanHelper"
