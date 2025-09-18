@@ -27,12 +27,8 @@ services:
     container_name: "peerbanhelper"
     volumes:
       - ./:/app/data
-    ports:
-      - "9898:9898"
-    environment:
-      - PUID=0
-      - PGID=0
-      - TZ=UTC
+    network_mode: host
+    stop_grace_period: 30s
 ```
 
 Replace `<tags>` with the image tag you just copied.

@@ -27,12 +27,8 @@ services:
     container_name: "peerbanhelper"
     volumes:
       - ./:/app/data
-    ports:
-      - "9898:9898"
-    environment:
-      - PUID=0
-      - PGID=0
-      - TZ=UTC
+    network_mode: host
+    stop_grace_period: 30s
 ```
 
 保存并退出编辑器，执行命令 `sudo docker-compose up -d` 以启动服务。Web 界面将在 9898 端口开放。
